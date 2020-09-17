@@ -376,6 +376,7 @@ func LoadFromFile(filename string) (*clientcmdapi.Config, error) {
 
 	// set LocationOfOrigin on every Cluster, User, and Context
 	for key, obj := range config.AuthInfos {
+		klog.V(6).Infoln("binxi-test: ", obj)
 		obj.LocationOfOrigin = filename
 		config.AuthInfos[key] = obj
 	}
